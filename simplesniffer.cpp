@@ -55,7 +55,6 @@ int main(){
 
 	if ( descr==NULL ) {
 
-		printf("Opening file failed\n");
         printf("%s\n", errbuf);
 
 		getchar();
