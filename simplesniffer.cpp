@@ -16,13 +16,18 @@
 	
     for (i=0; i<pkthdr->len; i++){
 
+		/*
         if ( isprint(packet[i]) )
 			printf("%c ", packet[i]);
 		else
 			printf(". ");
-		
+		*/
+
 		if( (i%16 == 0 && i!=0) || i==pkthdr->len-1 )
 			printf("\n");
+
+		printf("%.2x ", packet[i]);
+
     }
     return;
 }
@@ -35,15 +40,27 @@ int main(){
     memset(errbuf, 0, PCAP_ERRBUF_SIZE);
     
     /* Get the name of the first device suitable for capture */
-    device = pcap_lookupdev(errbuf);
+    /* device = pcap_lookupdev(errbuf);                      */
 
-    printf("Opening device %s\n", device);
+    /* printf("Opening device %s\n", device);                */
 
     /* Open device in promiscuous mode */
-    descr = pcap_open_live(device, MAXBYTES2CAPTURE, 1, 512, errbuf);
+    /* descr = pcap_open_live(device, MAXBYTES2CAPTURE, 1, 512, errbuf); */
+
+	descr = pcap_open_offline("cap.pcap", errbuf);
+
+	if ( descr==NULL ) {
+
+		printf("Opening file failed\n");
+        printf("%s\n", errbuf);
+
+		getchar();
+		return 0;
+	}
 
     /* Loop forever & call processPacket() for every received packet */
     pcap_loop(descr, -1, processPacket, (u_char *)&count);
 
+	getchar();
     return 0; 
 }
