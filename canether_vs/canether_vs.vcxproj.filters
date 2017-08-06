@@ -15,11 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\simplesniffer.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Library Include="..\WpdPack\Lib\wpcap.lib" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\WpdPack\Lib\wpcap.lib" />
+    <ClInclude Include="..\eth2can.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\eth2can.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

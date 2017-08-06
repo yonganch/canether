@@ -79,10 +79,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\simplesniffer.c" />
+    <ClCompile Include="..\eth2can.c" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\WpdPack\Lib\wpcap.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\eth2can.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
