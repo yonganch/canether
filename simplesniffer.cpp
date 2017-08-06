@@ -23,12 +23,16 @@
 			printf(". ");
 		*/
 
-		if( (i%16 == 0 && i!=0) || i==pkthdr->len-1 )
-			printf("\n");
-
 		printf("%.2x ", packet[i]);
+		
+		if( (i+1)%16 == 0 || i == pkthdr->len-1 ){
+
+			printf("\n");
+		}
 
     }
+
+	printf("\n");
     return;
 }
 
