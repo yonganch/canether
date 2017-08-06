@@ -15,11 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\WpdPack\Lib\wpcap.lib" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\simplesniffer.cpp">
+    <ClCompile Include="..\simplesniffer.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\WpdPack\Lib\wpcap.lib" />
   </ItemGroup>
 </Project>
